@@ -3,12 +3,24 @@ public class Player {
   public String nome;
   private int HP;
   private int atackForce;
-  private int resistência;
+  private int resistencia;
   private int defesa;
   private int destreza;
   private int velocidade;
 
+  public Player(String nome, int HP, int atackForce, int resistência, int defesa, int destreza, int velocidade) {
+    this.nome = nome;
+    this.HP = HP;
+    this.atackForce = atackForce;
+    this.resistencia = resistencia;
+    this.defesa = defesa;
+    this.destreza = destreza;
+    this.velocidade = velocidade;
+  }
 
+  public String getNome() {
+    return nome;
+  }
   public int getAtackForce() {
     return atackForce;
   }
@@ -16,11 +28,11 @@ public class Player {
     this.atackForce = atackForce;
   }
 
-  public int getResistência() {
-    return resistência;
+  public int getResistencia() {
+    return resistencia;
   }
-  public void setResistência(int resistência) {
-    this.resistência = resistência;
+  public void setResistencia(int resistencia) {
+    this.resistencia = resistencia;
   }
 
   public int getDefesa() {
@@ -50,6 +62,16 @@ public class Player {
   public void setHP(int HP) {
     this.HP = HP;
   }
+  public void receberDano(double dano) {
+    this.HP -= dano;
+    if (this.HP < 0) {
+      this.HP = 0;
+    }
+  }
+//  public int[] getInformacoes(){
+//    return informacoes = new int[] {getAtackForce(),getResistencia(),getDefesa(),getDestreza(),getVelocidade()};
+//
 
+//  }
 
 }
